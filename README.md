@@ -1,2 +1,0 @@
-# MohaDevLearn
-Moha Teaching Resources
