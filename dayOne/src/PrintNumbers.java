@@ -2,8 +2,9 @@ public class PrintNumbers {
 
     public static void main(String[] args){
     PrintNumbers P=new PrintNumbers();
-    printNumbers(5);
-
+   // calculInterest(1_000_000,6,2);
+    quadratic (5,12,4);
+    quadratic(2,4,2);
     }
 
     // Assignement 2. Exercise 7 :Write the programs to print the following patterns:
@@ -65,8 +66,36 @@ public class PrintNumbers {
     }
 
 
+    // Assignement 2. Exercise 1 :Write the programs to print the following patterns:
 
+    public static void calculInterest(int principal, float interest, int time ){
 
+        double i = ((principal * interest/100) * time);
+        double  totalAmount=i+principal;
+
+        System.out.println("Interest= " + i + " totalAmount " + totalAmount);
+
+    }
+
+    public static void quadratic(int a,int b,int c){
+        double discriminant=Math.pow(b,2)-4*a*c;
+        double x1;
+        double x2;
+
+if (discriminant<0) System.out.print("There are no real roots");
+else if (discriminant==0) {
+        x1= ((double)-b)/(2*a);
+        System.out.println("there one real root = " + x1);
+
+                            }
+        else {
+            System.out.println("discriminant = "+ discriminant);
+            x1=(-b+ Math.sqrt(discriminant))/(2*a);
+            x2=(-b- Math.sqrt(discriminant))/(2*a);
+            System.out.println("there are two real roots = " + x1+"  and  "+ x2);
+        }
+
+    }
     public static void circularJail(){
         // exercice page 5 Programming Fundamentales 1. pdf
 
