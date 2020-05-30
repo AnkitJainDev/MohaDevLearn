@@ -1,10 +1,146 @@
+import java.util.Scanner;
+
 public class PrintNumbers {
 
     public static void main(String[] args){
     PrintNumbers P=new PrintNumbers();
    // calculInterest(1_000_000,6,2);
-    quadratic (5,12,4);
-    quadratic(2,4,2);
+    //quadratic (5,12,4);
+    //quadratic(2,4,2);
+        // System.out.println(calculator());
+        student();
+    }
+
+
+    // Assignement 2. Exercise 1 :Write the programs to print the following patterns:
+
+    public static void calculInterest(int principal, float interest, int time ){
+
+        double i = ((principal * interest/100) * time);
+        double  totalAmount=i+principal;
+
+        System.out.println("Interest= " + i + " totalAmount " + totalAmount);
+
+    }
+
+
+    //Assignment 2. Exercise 2 :calculator Write a program to input name and marks of three tests of any student and calculate
+    //and print the name and average of best two test marks
+
+    public static void student(){
+
+        int grade;
+        Scanner sc=new Scanner(System.in);
+        System.out.print("kindly input the Student Name   ");
+        String name = sc.nextLine();
+        System.out.print("kindly input mark1   ");
+        int mark1=sc.nextInt();
+        System.out.print("kindly input mark2   ");
+        int mark2=sc.nextInt();
+
+        if (mark2>= mark1) {
+            grade=mark1;
+            mark1=mark2;
+            mark2=grade;
+        }
+
+        System.out.print("kindly input mark3   ");
+
+        int mark3=sc.nextInt();
+
+        if (mark3>= mark1) {
+            grade=mark3;
+            mark3=mark1;
+            mark1=grade;
+        }
+
+        if (mark3>= mark2) {
+            grade=mark3;
+            mark3=mark2;
+            mark2=grade;
+        }
+
+        System.out.println("Name of Student is  " + name);
+        System.out.println("Average of grades = " + (mark1+mark2)/2);
+    }
+
+    // Assignment 2. Exercise 3 :calculator
+
+    public static int calculator(){
+
+        Scanner scan=new Scanner(System.in);
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        char c = scan.next().charAt(0);
+
+        switch (c) {
+            case '+' :
+                return (a+b);
+
+            case '-' :
+                return (a-b);
+
+            case '*' :
+                return (a*b);
+
+            case '/' :
+                return (a/b);
+
+
+        }
+return (-1);
+    }
+
+    // Assignement 2. Exercise 4
+
+    public static void typeChar(){
+
+        Scanner scan=new Scanner(System.in);
+        char c = scan.next().charAt(0);
+        if (Character.isUpperCase(c)) System.out.println("the Character is UpperCase");
+        else if (Character.isLowerCase(c)) System.out.println("the Character is lowerCase");
+        else System.out.println("Incorrect Character");
+
+
+    }
+
+
+    // Assignement 2. Exercise 5
+
+
+    public static double totalSalary(int basic, char grade){
+        double t_sal;
+        int allow;
+
+        if (grade=='A') allow=1700;
+        else if (grade=='B') allow=1500;
+        else allow = 1300;
+
+        t_sal=basic*(1+0.7-0.11) + allow;
+        return (t_sal);
+    }
+
+    public static void quadratic(int a,int b,int c){
+
+        // Assignement 2. Exercise 6
+
+        double discriminant=Math.pow(b,2)-4*a*c;
+        double x1;
+        double x2;
+
+        if (discriminant<0) System.out.print("There are no real roots");
+        else if (discriminant==0) {
+            x1= ((double)-b)/(2*a);
+            System.out.println("there one real root = " + x1);
+
+        }
+        else {
+            System.out.println("discriminant = "+ discriminant);
+            x1=(-b+ Math.sqrt(discriminant))/(2*a);
+            x2=(-b- Math.sqrt(discriminant))/(2*a);
+            System.out.println("there are two real roots = " + x1+"  and  "+ x2);
+        }
+
     }
 
     // Assignement 2. Exercise 7 :Write the programs to print the following patterns:
@@ -65,37 +201,6 @@ public class PrintNumbers {
         System.out.println("pattern c I do not know ?????");
     }
 
-
-    // Assignement 2. Exercise 1 :Write the programs to print the following patterns:
-
-    public static void calculInterest(int principal, float interest, int time ){
-
-        double i = ((principal * interest/100) * time);
-        double  totalAmount=i+principal;
-
-        System.out.println("Interest= " + i + " totalAmount " + totalAmount);
-
-    }
-
-    public static void quadratic(int a,int b,int c){
-        double discriminant=Math.pow(b,2)-4*a*c;
-        double x1;
-        double x2;
-
-if (discriminant<0) System.out.print("There are no real roots");
-else if (discriminant==0) {
-        x1= ((double)-b)/(2*a);
-        System.out.println("there one real root = " + x1);
-
-                            }
-        else {
-            System.out.println("discriminant = "+ discriminant);
-            x1=(-b+ Math.sqrt(discriminant))/(2*a);
-            x2=(-b- Math.sqrt(discriminant))/(2*a);
-            System.out.println("there are two real roots = " + x1+"  and  "+ x2);
-        }
-
-    }
     public static void circularJail(){
         // exercice page 5 Programming Fundamentales 1. pdf
 
