@@ -2,9 +2,70 @@ public class PrintNumbers {
 
     public static void main(String[] args){
     PrintNumbers P=new PrintNumbers();
-    circularJail();
+    printNumbers(5);
 
     }
+
+    // Assignement 2. Exercise 7 :Write the programs to print the following patterns:
+
+    public static void printNumbers(int n){
+
+        if (n<=0) throw new IllegalArgumentException("Parameter N should be higher than 0");
+        else for ( int i=1; i<=n;i++){
+            for (int k=1;k<=i;k++) System.out.print('1'); System.out.println();
+                                    }
+        System.out.println("Pattern b");
+
+            if (n==1) System.out.println('1');
+            else if (n==2) System.out.println("11");
+            else {
+                System.out.println('1'); System.out.println("11");
+
+                for (int j=3;j<=n;j++){
+                    int numberZeros=j-2;
+                    System.out.print('1');
+                    for (int l=1;l<=numberZeros;l++) System.out.print('0');
+                    System.out.println('1');
+                }
+            }
+        System.out.println("pattern d");
+
+
+        if (n==1) System.out.println('1');
+        else if (n==2) System.out.println("11");
+        else {
+            System.out.println('1'); System.out.println("11");
+
+            for (int j=3;j<=n;j++){
+                int numberZeros=j-2;
+                System.out.print(j-1);
+                for (int l=1;l<=numberZeros;l++) System.out.print('0');
+                System.out.println(j-1);
+            }
+        }
+        System.out.println("pattern e");
+
+        if (n==1) System.out.println('1');
+        else if (n==2) System.out.println("11");
+        else {
+            System.out.println('1'); System.out.println("11");
+
+            for (int j=3;j<=n;j++){
+                int numberTwo=j-2;
+                System.out.print('1');
+                for (int l=1;l<=numberTwo;l++) System.out.print('2');
+                System.out.println('1');
+            }
+        }
+        System.out.println("pattern f");
+    for (int i=n;i>=1;i--){
+        for (int k=1;k<=n-i+1;k++) System.out.print(i); System.out.println();
+    }
+        System.out.println("pattern c I do not know ?????");
+    }
+
+
+
 
     public static void circularJail(){
         // exercice page 5 Programming Fundamentales 1. pdf
@@ -37,6 +98,9 @@ public class PrintNumbers {
         }
     }
 
+
+
+    //????? Infinite Quarter Sequence
     private void printAll(int n){
         // exercice page 13 Programming Fundamentales 1. pdf
         if (n<=0) throw new IllegalArgumentException("Parameter N should be higher than 0");
