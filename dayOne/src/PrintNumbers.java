@@ -2,8 +2,24 @@ public class PrintNumbers {
 
     public static void main(String[] args){
     PrintNumbers P=new PrintNumbers();
-    P.printall(10);
+    circularJail();
 
+    }
+
+    public static void circularJail(){
+        // exercice page 5 Programming Fundamentales 1. pdf
+
+        boolean[] cells=new boolean[101];
+        for (int i=1; i<101;i++) cells[i]=true;
+
+        for (int i=1; i<100;i=i+2) cells[i+1]=false;
+
+        for (int j=3;j<101;j=j+1) {
+            int k;
+            for (k = j; k < 101; k = k + j) if (cells[k] == true) cells[k] = false; else cells[k] = true;
+        }
+
+        for (int i=1; i<101;i++) if (cells[i]==true) System.out.print("cell Number "+i+"  ");
     }
 
     private void printall(int n){
