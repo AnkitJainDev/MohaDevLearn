@@ -8,11 +8,12 @@ public class PrintNumbers {
     //quadratic (5,12,4);
     //quadratic(2,4,2);
         // System.out.println(calculator());
-        student();
+       // sum_even_odd_digits(1279);
+        firstTwenty();
     }
 
 
-    // Assignement 2. Exercise 1 :Write the programs to print the following patterns:
+    // Assignement 2. Exercise 1 :Interest Computation:
 
     public static void calculInterest(int principal, float interest, int time ){
 
@@ -201,6 +202,72 @@ return (-1);
         System.out.println("pattern c I do not know ?????");
     }
 
+    public static int sum_product(){
+
+        // Assignement 2a. Exercise 1 Write a program that asks the user for a number n and gives him the possibility to
+        //choose between computing the sum and computing the product of 1,...,n.
+
+        int sum=0;
+        int product=1;
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Kindly input N ");
+        int n=scan.nextInt();
+        System.out.println("Kindly choose between Sum 1 and Product 2 ");
+        if (scan.nextInt()==1){
+            for (int i=0;i<=n;i++) sum+=i; return sum;
+        }
+        else {
+            if (n==0) return (0); else for (int i=1;i<=n;i++) product*=i; return product;
+        }
+    }
+
+    // Exercice 2 Assignment 2-a, Write a program to input a number and print the sum of all it’s even digits and sum of
+    //all its odd digits; separately.
+
+    public static void sum_even_odd_digits(int n){
+        int even_digits=0;
+        int odd_digits=0;
+        int modus=0;
+if (n<10) {
+    if (even(n)) even_digits++; else odd_digits++;
+}
+    else {
+        while (n!=0){
+
+            modus=n%10;
+        if (even(modus)) even_digits++; else odd_digits++;
+        n/=10;
+    }
+}
+    System.out.println("even_digits= " + even_digits);
+    System.out.println("odd_digits= " + odd_digits);
+}
+
+public static boolean even (int n){
+
+if ((n==0)||(n==2)||(n==4)||(n==6)||(n==8)) return true; else return false;
+
+}
+
+public static double xPowern(double x, double n){
+// Exercise 3. Assignment 2-a : Write a program to find x n . Take x and n from the user.
+        return(Math.pow(x,n));
+
+}
+
+public static double reverse (int x){
+        //Exercise 4. Assignment 2-a Write a program to generate the reverse of a given number.
+        return (1.0/x);
+
+}
+
+public static void firstTwenty(){
+ for (int i=0; i<=20; i++) if (((3*i+2) % 4)==0) System.out.println(" " + (3*i+2) + " ");
+
+
+
+}
     public static void circularJail(){
         // exercice page 5 Programming Fundamentales 1. pdf
 
